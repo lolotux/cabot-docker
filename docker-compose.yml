@@ -1,0 +1,37 @@
+app:
+  build: ./provision
+  links:
+    - db
+    - celerybroker
+    - smtp
+  volumes:
+    - /cabot
+    #- .:/cabot/
+  ports:
+     - "5000:5000"
+  env_file: provision/cabot_env
+
+db:
+  image: postgres
+  volumes:
+    - /var/lib/cabotdb:/var/lib/postgresql
+  environment:
+    POSTGRES_USER: docker
+    POSTGRES_PASSWORD: docker
+
+celerybroker:
+  image: redis
+
+smtp:
+  image: tianon/exim4
+
+nginx:
+  image: nginx
+  ports:
+     - "9999:9999"
+  links:
+     - app
+  volumes_from:
+     - app
+  volumes:
+     - ./provision/nginx.conf:/etc/nginx/nginx.conf:ro
