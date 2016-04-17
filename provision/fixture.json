@@ -3,9 +3,9 @@
     "pk": 1,
     "model": "auth.user",
     "fields": {
-      "username": "lolo",
-      "first_name": "Laurent",
-      "last_name": "Besson",
+      "username": "docker",
+      "first_name": "",
+      "last_name": "",
       "is_active": true,
       "is_superuser": true,
       "is_staff": true,
@@ -13,7 +13,7 @@
       "groups": [],
       "user_permissions": [],
       "password": "pbkdf2_sha256$10000$oOHx8UaaaUGV$hXqEiaGKCttreiE30rabJ2aaf5ggw8W++ggC6FeCdz8=",
-      "email": "lolotux@gmail.com",
+      "email": "docker@example.com",
       "date_joined": "2014-04-14T15:29:36.813Z"
     }
   }
