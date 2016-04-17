@@ -6,8 +6,8 @@
 
 FROM debian:jessie
 
-MAINTAINER Alexander Kushnarev <avkushnarev@gmail.com>
-MAINTAINER Industrialisation Team <industrialisation@pmsipilot.com>
+MAINTAINER lolotux
+
 
 # Prepare
 RUN echo 'debconf debconf/frontend select Noninteractive' | debconf-set-selections && echo "deb http://debian.ens-cachan.fr/ftp/debian/ jessie main contrib non-free" > /etc/apt/sources.list \
@@ -32,7 +32,7 @@ ENV DJANGO_SETTINGS_MODULE cabot.settings
 ENV HIPCHAT_URL https://api.hipchat.com/v1/rooms/message
 ENV LOG_FILE /dev/stdout
 ENV PORT 5000
-ENV ADMIN_EMAIL administrateur@pmsipilot.com
+ENV ADMIN_EMAIL admin@example.com
 ENV CABOT_FROM_EMAIL noreply@example.com
 ENV DEBUG t
 ENV DB_HOST db
